@@ -74,6 +74,18 @@ class F18_HUD_CJv1(Screen):
         self.arrow_scaled = pygame.transform.scale(self.arrow, (50, 50))
         self.roll_point = pygame.image.load("lib/screens/_images/tick_w.png").convert()
         self.roll_point.set_colorkey((0, 0, 0))
+        self.Nadir_Circ = pygame.image.load("lib/screens/_images/Nadir_Circle.png").convert()
+        self.Nadir_Circ.set_colorkey((0, 0, 0))
+        self.Nadir_Circ = pygame.transform.scale(self.Nadir_Circ, (50, 50))
+        #Zenith
+        self.Zenith_Star = pygame.image.load("lib/screens/_images/Zenith_Star.png").convert()
+        self.Zenith_Star.set_colorkey((0, 0, 0))
+        self.Zenith_Star = pygame.transform.scale(self.Zenith_Star, (50, 50))        
+                #black_gap
+        self.black_gap = pygame.image.load("lib/screens/_images/black_gap.png").convert()
+        self.black_gap.set_colorkey((0, 0, 0))
+        self.black_gap = pygame.transform.scale(self.black_gap, (75, 80))        
+        
         self.roll_point_scaled = pygame.transform.scale(
             self.roll_point, (self.roll_point_size, self.roll_point_size)
         )
@@ -184,6 +196,9 @@ class F18_HUD_CJv1(Screen):
             self.line_mode,
             self.font,
             self.pxy_div,
+            self.Nadir_Circ,
+            self.Zenith_Star,
+            self.black_gap 
         )
 
         # draw mask

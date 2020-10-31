@@ -50,7 +50,13 @@ class Kivic_HUD(Screen):
         self.arrow = pygame.image.load("lib/screens/_images/arrow_g.png").convert()
         self.arrow.set_colorkey((255, 255, 255))
         self.arrow_scaled = pygame.transform.scale(self.arrow, (50, 50))
-
+        self.Nadir_Circ = pygame.image.load("lib/screens/_images/Nadir_Circle.png").convert()
+        self.Nadir_Circ.set_colorkey((0, 0, 0))
+        self.Nadir_Circ = pygame.transform.scale(self.Nadir_Circ, (50, 50))
+        #Zenith
+        self.Zenith_Star = pygame.image.load("lib/screens/_images/Zenith_Star.png").convert()
+        self.Zenith_Star.set_colorkey((0, 0, 0))
+        self.Zenith_Star = pygame.transform.scale(self.Zenith_Star, (50, 50))
         # fonts
         self.font = pygame.font.SysFont(
             None, int(self.height / 20)
@@ -91,6 +97,9 @@ class Kivic_HUD(Screen):
             self.line_mode,
             self.font,
             self.pxy_div,
+            self.Nadir_Circ,
+            self.Zenith_Star,
+            self.black_gap,
         )
 
         # render debug text

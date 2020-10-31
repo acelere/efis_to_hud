@@ -142,7 +142,7 @@ def hdg_main(self, hdg_hdg, gnd_trk, turn_rate):
             x4 = roint(hdg_lticks * 60)
             y4 = roint(60)
             pygame.draw.line(
-                self.hdg, (0, 255, 0), [x3 - 4440 - d, y3], [x4 - 4440 - d, y4], 3
+                self.hdg, (2, 255, 20), [x3 - 4440 - d, y3], [x4 - 4440 - d, y4], 3
             )
 
         for hdg_tick_label in range(641):
@@ -334,8 +334,8 @@ def hdg_main(self, hdg_hdg, gnd_trk, turn_rate):
                     (x2 - self.R35_rect.center[0], y2 - self.R35_rect.center[1] - 12),
                 )
 
-        pygame.draw.line(self.hdg, (0, 255, 0), [170, 80], [180, 60], 3)
-        pygame.draw.line(self.hdg, (0, 255, 0), [180, 60], [190, 80], 3)
+        pygame.draw.line(self.hdg, (2, 255, 20), [170, 80], [180, 60], 3)
+        pygame.draw.line(self.hdg, (2, 255, 20), [180, 60], [190, 80], 3)
 
         # Mag heading
         # Draw Mask
@@ -346,7 +346,7 @@ def hdg_main(self, hdg_hdg, gnd_trk, turn_rate):
                 self.hdg,
                 self.myfont1,
                 "   %d" % hdg_hdg,
-                (255, 255, 0),
+                (2, 255, 20),
                 147,
                 6,
                 66,
@@ -359,12 +359,12 @@ def hdg_main(self, hdg_hdg, gnd_trk, turn_rate):
                 self.hdg,
                 self.myfont1,
                 "  %d" % hdg_hdg,
-                (255, 255, 0),
+                (2, 255, 20),
                 147,
                 6,
                 66,
                 30,
-                (0, 255, 0),
+                (2, 255, 20),
                 1,
             )
         else:
@@ -372,12 +372,12 @@ def hdg_main(self, hdg_hdg, gnd_trk, turn_rate):
                 self.hdg,
                 self.myfont1,
                 " %d" % hdg_hdg,
-                (255, 255, 0),
+                (2, 255, 20),
                 147,
                 6,
                 66,
                 30,
-                (0, 255, 0),
+                (2, 255, 20),
                 1,
             )
 
@@ -385,5 +385,5 @@ def hdg_main(self, hdg_hdg, gnd_trk, turn_rate):
         old_gnd_trk = gnd_trk
 
     self.pygamescreen.blit(self.hdg1, (0, 0))
-    self.pygamescreen.blit(self.hdg, (self.width / 2 - 130, 0))
-    self.pygamescreen.blit(self.trk, (self.width / 2 - 270, 0))
+    self.pygamescreen.blit(self.hdg, (self.width / 2 - 180, 0))
+    self.pygamescreen.blit(self.trk, (self.width / 2 - 320, 0))

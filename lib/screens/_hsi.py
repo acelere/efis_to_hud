@@ -88,10 +88,8 @@ def hsi_init(self, hsi_size, gnd_trk_tick_size, rose_color, label_color):
         ),
     )
 
-
 def roint(num):
     return int(round(num))
-
 
 # Create HSI label coordinates
 def labeler(self, hsi_hdg):
@@ -159,17 +157,16 @@ def gnd_trk_tick(self, gnd_trk):
     self.pygamescreen.blit(
         gnd_trk_tick_rotated,
         (
-            self.width / 2 - gnd_trk__rect.center[0],
+            self.width / 2 - gnd_trk__rect.center[0] ,
             self.height / 2 - gnd_trk__rect.center[1],
         ),
     )
-
 
 def turn_rate_disp(self, turn_rate):
     if abs(turn_rate) > 0.2:
         pygame.draw.line(
             self.pygamescreen,
-            (255, 0, 255),
+            (255, 0, 0),
             (self.width / 2, self.height / 2 - 158),
             (self.width / 2 + (turn_rate * 10), self.height / 2 - 158),
             10,
@@ -220,7 +217,7 @@ def turn_rate_disp(self, turn_rate):
 
 def hsi_main(self, hsi_hdg, gnd_trk, turn_rate):
     hsi_hdg = (hsi_hdg + 90) % 360
-    gnd_trk = roint(hsi_hdg - gnd_trk - 90) % 360
+    gnd_trk = roint(hsi_hdg - gnd_trk - 0) % 360
 
     # Draw Compass Rose Tick Marks
     tick_rotated = pygame.transform.rotate(self.rose, hsi_hdg)
@@ -229,6 +226,7 @@ def hsi_main(self, hsi_hdg, gnd_trk, turn_rate):
         tick_rotated,
         (self.width / 2 - tick_rect.center[0], self.height / 2 - tick_rect.center[1]),
     )
+       
 
     # Draw Labels
     global old_hsi_hdg

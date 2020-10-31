@@ -11,8 +11,8 @@ class Screen:
     def __init__(self):
         self.name = "HUD Screen"
         self.screenVersion = 1.0
-        self.width = 640
-        self.height = 480
+        self.width = 480
+        self.height = 720
         self.pygamescreen = 0
 
     def initDisplay(self, pygamescreen, width, height):
